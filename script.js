@@ -11,14 +11,13 @@ const twitterBtn= document.getElementById("twitter");
 const newquoteBtn= document.getElementById("new-quote");
 const loader = document.getElementById("loader");
 
-//loading function
-function loading(){
+
+function showLoadingSpinner(){
     loader.hidden = false;
     quoteContainer.hidden =true; 
 }
 
-//complete function
-function complete(){
+function removeLoadingSpinner(){
     loader.hidden= true;
     quoteContainer.hidden= false;
 }
@@ -29,7 +28,7 @@ async function getQuote(){
 //try and catch errors
 //data is fatched and wait till it comes then load into json and display
 try {
-    loading();
+    showLoadingSpinner();
     const response = await fetch(proxyUrl+apiUrl);
     const data = await response.json();
     if(data.quoteAuthor===""){
@@ -47,7 +46,9 @@ try {
         quoteText.classList.remove("long-quote");
     }
     quoteText.innerText = data.quoteText;
-    complete();
+    removeLoadingSpinner();
+    //code breaks here
+    // throw new error("oops!");
    } catch (error) {
     getQuote();
     console.log("Ooops! No quote.. " ,error);
