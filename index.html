@@ -7,26 +7,25 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- fonts -->
     <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
         </style>
-        
+
 </head>
 <body>
     <div class="quote-container" id="quote-container">
         <!-- Quote -->
-        <div class="quote-text">
+        <div class="quote-text" id="quote-text">
         <i class="fas fa-quote-left"></i>
-        <span> Do it today, do it everyday.</span>
+        <span id="quote"> </span>
         </div>
 
      <!-- Author  -->
-    <div class="quote-author">
+    <div class="quote-author" id="quote-author">
         <span >
-            Buddha
         </span>
     </div>
         <!-- buttons -->
@@ -39,11 +38,8 @@
          </button>
     </div>
 </div>
-    
-       
-    
+<div class="loader" id="loader"></div>
 
-    
     <!-- Script -->
     <script src="script.js"></script>
 </body>
